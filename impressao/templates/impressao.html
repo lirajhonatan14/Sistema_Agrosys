@@ -7,25 +7,24 @@
 <!-- detalhes.html -->
 
 <h1>Detalhes</h1>
-{% if responsavel %}
     <h2>Responsável Técnico</h2>
-    <p>Nome: {{ responsavel.nome }}</p>
-    <p>CNPJ: {{ responsavel.cnpj }}</p>
-    <p>Número de Registro: {{ responsavel.numero_registro }}</p>
+    <p>Nome: {{ responsavel.NOME }}</p>
+    <p>CNPJ: {{ responsavel.CNPJ }}</p>
+    <p>Número de Registro: {{ responsavel.NUM_REGISTRO }}</p>
 
     <h2>Produtor Rural</h2>
-    <p>Nome: {{ produtor.nome }}</p>
-    <p>Propriedade: {{ produtor.propriedade }}</p>
+    <p>Nome: {{ reponsavel.NUM_REGISTRO.NOME }}</p>
+    <p>Propriedade: {{ reponsavel.NUM_REGISTRO.PROPRIEDADE. }}</p>
 
     <h2>Propriedade</h2>
-    <p>Descrição: {{ propriedade.descricao }}</p>
+    <p>Descrição: {{ reponsavel.NUM_REGISTRO }}</p>
     <p>CNPJ: {{ propriedade.cnpj }}</p>
     <p>Local: {{ propriedade.local }}</p>
     <p>Latitude: {{ propriedade.latitude }}</p>
     <p>Longitude: {{ propriedade.longitude }}</p>
 
     <h2>Diagnóstico e Recomendações Técnicas</h2>
-    <p>Cultura: {{ diagnostico.cultura }}</p>
+    <p>Cultura: {{ reponsavel.NUM_REGISTRO.PROPRIEDADE.LOCAL.CULTURA }}</p>
     <p>Produto Comercial: {{ diagnostico.produto_comercial }}</p>
     <p>Alvo: {{ diagnostico.alvo }}</p>
     <p>Área a Tratar: {{ diagnostico.area_a_tratar }}</p>
@@ -36,6 +35,21 @@
     <p>Quantidade a Adquirir: {{ diagnostico.quantidade_a_adquirir }}</p>
     <p>Número de Aplicações: {{ diagnostico.numero_de_aplicacoes }}</p>
     <p>Época de Aplicação: {{ diagnostico.epoca_de_aplicacao }}</p>
-{% endif %}
+
+<script>
+    $(document).ready(function() {
+      $('#btn-imprimir').click(function() {  
+        $('#div-confirmacao').show();
+      });
+      $('#btn-cancelar').click(function() {
+        $('#div-confirmacao').hide();
+      });
+      $('#btn-confirmar').click(function() {
+ 
+        window.print();
+        $('#div-confirmacao').hide();
+      });
+    });
+    </script>
 </body>
 </html>
