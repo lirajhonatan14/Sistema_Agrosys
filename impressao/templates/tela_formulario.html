@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Esta Funcionando</h1>
+        <form action='{% url "form" %}' method="post">
+            {% csrf_token %}
+            {{ form_resp.as_p }}
+            {{ form_prod.as_p }}
+            {{ form_prop.as_p }}
+            {{ form_diag.as_p }}
+
+            <div class='home'>
+              <input class ="butao" type="submit" value="Salvar">
+            </div>
+          </form>
+    </body>
+</html>

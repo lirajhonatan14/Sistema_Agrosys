@@ -3,16 +3,17 @@ from django.db import models
 class ResponsaveisTecnicos(models.Model):
     NOME = models.CharField(max_length=50)
     CNPJ = models.CharField(max_length=50)
-    NOME_REGISTRO = models.CharField(max_length=50)
+    NUM_REGISTRO = models.ForeignKey("impressao.ProdutorRural", on_delete=models.CASCADE)
 
 class ProdutorRural(models.Model):
     NOME = models.CharField(max_length=100)
-    PROPRIEDADE = models.CharField(max_length=100)
+    NUM_REGISTRO = models.AutoField(primary_key=True)
+    PROPRIEDADE = models.ForeignKey("impressao.ResponsaveisTecnicos", on_delete=models.CASCADE)
     
 class Propriedade(models.Model):
     DESCRICAO = models.CharField(max_length=100)
-    CNPJ = models.CharField(max_length=100)
-    LOCAL = models.CharField(max_length=100)
+    CNPJ = models.CharField(max_length=100, primary_key=True)
+    LOCAL =models.ForeignKey("impressao.Diagnostico", on_delete=models.CASCADE)
     LATITUDE = models.CharField(max_length=100)
     LONGITUDE = models.CharField(max_length=100)
     

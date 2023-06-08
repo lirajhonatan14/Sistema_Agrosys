@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_ficha2.css' %}">
+    <title>Formulário para registro de cães</title>
+  </head>
+  <body>
+<!-- detalhes.html -->
+
+<h1>Detalhes</h1>
+
+<h2>Responsável Técnico</h2>
+<p>Nome: {{ responsavel.nome }}</p>
+<p>CNPJ: {{ responsavel.cnpj }}</p>
+<p>Número de Registro: {{ responsavel.numero_registro }}</p>
+
+<h2>Produtor Rural</h2>
+<p>Nome: {{ produtor.nome }}</p>
+<p>Propriedade: {{ produtor.propriedade }}</p>
+
+<h2>Propriedade</h2>
+<p>Descrição: {{ propriedade.descricao }}</p>
+<p>CNPJ: {{ propriedade.cnpj }}</p>
+<p>Local: {{ propriedade.local }}</p>
+<p>Latitude: {{ propriedade.latitude }}</p>
+<p>Longitude: {{ propriedade.longitude }}</p>
+
+<h2>Diagnóstico e Recomendações Técnicas</h2>
+<p>Cultura: {{ diagnostico.cultura }}</p>
+<p>Produto Comercial: {{ diagnostico.produto_comercial }}</p>
+<p>Alvo: {{ diagnostico.alvo }}</p>
+<p>Área a Tratar: {{ diagnostico.area_a_tratar }}</p>
+<p>Volume da Calda: {{ diagnostico.volume_da_calda }}</p>
+<p>Intervalo de Segurança: {{ diagnostico.intervalo_de_seguranca }}</p>
+<p>Modalidade de Aplicação: {{ diagnostico.modalidade_aplicacao }}</p>
+<p>Equipamento de Aplicação: {{ diagnostico.equipamento_aplicacao }}</p>
+<p>Quantidade a Adquirir: {{ diagnostico.quantidade_a_adquirir }}</p>
+<p>Número de Aplicações: {{ diagnostico.numero_de_aplicacoes }}</p>
+<p>Época de Aplicação: {{ diagnostico.epoca_de_aplicacao }}</p>
+
+</body>
+</html>

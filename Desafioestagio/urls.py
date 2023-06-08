@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from impressao.views import formulario_impressao, DetalhesView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', formulario_impressao, name='form'),
+     path('detalhes/<int:pk>/', DetalhesView.as_view(), name='impressao'),
+    
 ]
